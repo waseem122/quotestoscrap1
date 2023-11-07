@@ -1,9 +1,7 @@
-#This is quotes to scrap website scraping file
-#x
+#Scraping static website
 import requests
 from bs4 import BeautifulSoup
 
-res = requests.get('https://quotes.toscrape.com/')
-soup = BeautifulSoup(res.content, 'html.parser')
-print(soup.title.text)
-print(res)
+url = 'https://quotes.toscrape.com/'
+res = requests.get(url)
+print(res.text)
