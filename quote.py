@@ -1,12 +1,12 @@
-#Scraping static website
 import requests
 from bs4 import BeautifulSoup
 
-url = 'https://quotes.toscrape.com/'
+url = "https://quotes.toscrape.com/"
 res = requests.get(url)
-if res.status_code ==200:
+if res.status_code == 200:
+    #parse the webpage
     soup = BeautifulSoup(res.content, 'html.parser')
-    print(soup.prettify())
+    print(soup.title)
 
 else:
-    print('page is not found!')
+    print('webpage is not there')
